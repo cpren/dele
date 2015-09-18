@@ -53,8 +53,17 @@
                       </block>
                     </value>
                     <next>
-                      <block type="procedures_callnoreturn" id="14">
-                        <mutation name="Add"></mutation>
+                      <block type="robot_delay" id="38" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="45">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="14">
+                            <mutation name="Add"></mutation>
+                          </block>
+                        </next>
                       </block>
                     </next>
                   </block>
@@ -87,8 +96,17 @@
                       </block>
                     </value>
                     <next>
-                      <block type="procedures_callnoreturn" id="21">
-                        <mutation name="Add"></mutation>
+                      <block type="robot_delay" id="46" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="47">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="21">
+                            <mutation name="Add"></mutation>
+                          </block>
+                        </next>
                       </block>
                     </next>
                   </block>
@@ -111,8 +129,17 @@
                 <statement name="DO2">
                   <block type="movement_reverse" id="25">
                     <next>
-                      <block type="procedures_callnoreturn" id="26">
-                        <mutation name="Add"></mutation>
+                      <block type="robot_delay" id="48" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="49">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="26">
+                            <mutation name="Add"></mutation>
+                          </block>
+                        </next>
                       </block>
                     </next>
                   </block>
