@@ -1,3 +1,174 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="movement_forward" id="10" x="62" y="34"></block>
+  <block type="variables_set" id="110" inline="true" x="-32" y="-44">
+    <field name="VAR">Total</field>
+    <value name="VALUE">
+      <block type="math_number" id="214">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="90" inline="true">
+        <field name="VAR">front_L</field>
+        <value name="VALUE">
+          <block type="math_number" id="215">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="104" inline="true">
+            <field name="VAR">front_R</field>
+            <value name="VALUE">
+              <block type="math_number" id="216">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_whileUntil" id="236" inline="false">
+                <field name="MODE">WHILE</field>
+                <value name="NUMBER">
+                  <block type="math_number" id="243">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="controls_if" id="75" inline="false">
+                    <mutation elseif="2"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="152" inline="true">
+                        <field name="OP">LT</field>
+                        <value name="A">
+                          <block type="variables_get" id="160">
+                            <field name="VAR">front_L</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="168">
+                            <field name="VAR">front_R</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="movement_setmotors" id="196" inline="true">
+                        <value name="BOTHMOVLEFT">
+                          <block type="math_number" id="205">
+                            <field name="NUM">-100</field>
+                          </block>
+                        </value>
+                        <value name="BOTHMOVRIGHT">
+                          <block type="math_number" id="206">
+                            <field name="NUM">-20</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="227">
+                            <mutation name="Add"></mutation>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_compare" id="171" inline="true">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                          <block type="variables_get" id="172">
+                            <field name="VAR">front_L</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="173">
+                            <field name="VAR">front_R</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="movement_setmotors" id="197" inline="true">
+                        <value name="BOTHMOVLEFT">
+                          <block type="math_number" id="207">
+                            <field name="NUM">-20</field>
+                          </block>
+                        </value>
+                        <value name="BOTHMOVRIGHT">
+                          <block type="math_number" id="204">
+                            <field name="NUM">-100</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="228">
+                            <mutation name="Add"></mutation>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <value name="IF2">
+                      <block type="logic_compare" id="174" inline="true">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="175">
+                            <field name="VAR">front_L</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="176">
+                            <field name="VAR">front_R</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO2">
+                      <block type="movement_reverse" id="186">
+                        <next>
+                          <block type="procedures_callnoreturn" id="229">
+                            <mutation name="Add"></mutation>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <next>
+                  <block type="oled_cleardisplay" id="252">
+                    <next>
+                      <block type="oled_drawnumber" id="261" inline="true">
+                        <value name="NUMBER">
+                          <block type="variables_get" id="269">
+                            <field name="VAR">Total</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" id="68" x="189" y="-46">
+    <mutation></mutation>
+    <field name="NAME">Add</field>
+    <statement name="STACK">
+      <block type="variables_set" id="118" inline="true">
+        <field name="VAR">Total</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="88" inline="true">
+            <field name="OP">ADD</field>
+            <value name="A">
+              <block type="variables_get" id="126">
+                <field name="VAR">front_L</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="variables_get" id="134">
+                <field name="VAR">front_R</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
 </xml>
